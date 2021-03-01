@@ -1,0 +1,10 @@
+{
+  "posts": [],
+  "users": [
+    {
+      "name": "Алексей",
+      "email": "info@balticwebstudio.com",
+      "id": 1
+    }
+  ]
+}
