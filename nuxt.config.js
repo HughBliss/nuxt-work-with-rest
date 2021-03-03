@@ -44,7 +44,7 @@ export default {
   axios: {},
 
   env: {
-    API_URL: 'http://localhost:3030'
+    API_URL: process.env.API_URL || 'http://localhost:3030'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

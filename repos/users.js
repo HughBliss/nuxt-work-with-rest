@@ -7,6 +7,12 @@ export const usersRepo = request => ({
       url: URL
     })
   },
+  get (id) {
+    return request({
+      method: 'GET',
+      url: `${URL}/${id}`
+    })
+  },
   create (user) {
     return request({
       method: 'POST',

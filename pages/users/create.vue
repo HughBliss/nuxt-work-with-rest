@@ -1,13 +1,5 @@
 <template>
-  <div class="users-page">
-    <ul>
-      <li v-for="user in users" :key="user.id">
-        {{ user.name }} - {{ user.email }}
-        <button @click="remove(user.id)">
-          x
-        </button>
-      </li>
-    </ul>
+  <div class="create-user-page">
     <form @submit.prevent="handleCreate">
       <label>
         Name
@@ -16,6 +8,10 @@
       <label>
         Email
         <input v-model="newUser.email" type="text" name="email">
+      </label>
+      <label>
+        Info
+        <input v-model="newUser.info" type="text" name="info">
       </label>
       <button type="submit">
         create
@@ -27,36 +23,27 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 
-const { mapState, mapActions } = createNamespacedHelpers('users')
+const { mapActions } = createNamespacedHelpers('users')
 export default {
-  name: 'Users',
+  name: 'Create',
   data () {
     return {
       newUser: {
         name: '',
-        email: ''
+        email: '',
+        info: ''
       }
-    }
-  },
-  computed: {
-    ...mapState(['users'])
-  },
-  async mounted () {
-    try {
-      await this.fetchUsers()
-    } catch (e) {
-      alert(e)
     }
   },
   methods: {
     async handleCreate () {
       try {
-        await
-        this.create(this.newUser)
+        await this.create(this.newUser)
         this.newUser = {
           name: '',
           email: ''
         }
+        await this.$router.push('/users')
       } catch (e) {
         alert(e)
       }
@@ -65,3 +52,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

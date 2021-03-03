@@ -2,9 +2,28 @@
   "posts": [],
   "users": [
     {
-      "name": "Алексей",
-      "email": "info@balticwebstudio.com",
+      "name": "KORZHAVIN ALEXEY",
+      "email": "hughwols@gmail.com",
+      "info": "qwe",
       "id": 1
+    },
+    {
+      "name": "дом",
+      "email": "hughwols@gmail.com",
+      "info": "123 1231 123",
+      "id": 2
+    },
+    {
+      "name": "Alexey Korzhavin",
+      "email": "hughwols@gmail.com",
+      "info": "123 1231 123",
+      "id": 3
+    },
+    {
+      "name": "Annna Frank",
+      "email": "hughwols@gmail.com",
+      "info": "qwe",
+      "id": 4
     }
   ]
 }

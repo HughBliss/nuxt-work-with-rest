@@ -1,8 +1,8 @@
 const INIT_POSTS = 'INIT_POSTS'
 
-export const state = {
+export const state = () => ({
   posts: []
-}
+})
 
 export const mutations = {
   [INIT_POSTS]: (state, posts) => {

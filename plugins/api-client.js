@@ -9,6 +9,9 @@ export default function ({ $axios, store, redirect }, inject) {
 
   api.interceptors.request.use(
     (config) => {
+      if (store.getters.token) {
+        config.headers.Authentication = 'Bearer' + store.getters.token
+      }
       return config
     },
     (error) => {
@@ -20,6 +23,9 @@ export default function ({ $axios, store, redirect }, inject) {
       return response.data
     },
     (error) => {
+      if (error.code === 401) {
+        redirect('/auth')
+      }
       return Promise.reject(error)
     }
   )
