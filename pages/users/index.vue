@@ -23,19 +23,12 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapState, mapActions } = createNamespacedHelpers('users')
 export default {
   name: 'Users',
-  data () {
-    return {
-      newUser: {
-        name: '',
-        email: ''
-      }
-    }
-  },
+
   async fetch () {
     try {
       await this.fetchUsers()
     } catch (e) {
-      alert(e)
+      throw new Error(e)
     }
   },
   computed: {
